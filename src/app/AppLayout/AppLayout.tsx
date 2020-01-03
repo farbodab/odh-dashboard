@@ -11,6 +11,7 @@ import {
   SkipToContent
 } from '@patternfly/react-core';
 import { routes } from '@app/routes';
+import LogoODH from '../../../src/assets/logos/odh.svg';
 
 interface IAppLayout {
   children: React.ReactNode;
@@ -35,7 +36,7 @@ const AppLayout: React.FunctionComponent<IAppLayout> = ({children}) => {
   };
   const Header = (
     <PageHeader
-      logo="Patternfly"
+      logo={<LogoODH/>}
       logoProps={logoProps}
       toolbar="Toolbar"
       showNavToggle

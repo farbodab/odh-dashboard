@@ -83,7 +83,7 @@ module.exports = {
           (input.indexOf('pficon') === -1)
         ),
         use: {
-          loader: 'raw-loader',
+          loader: 'react-svg-loader',
           options: {}
         }
       },

@@ -22,6 +22,7 @@
     "build:storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.7",
     "@storybook/addon-actions": "^5.2.5",
     "@storybook/addon-info": "^5.2.5",
     "@storybook/addon-links": "^5.2.5",
@@ -39,6 +40,7 @@
     "@types/webpack": "^4.39.8",
     "@typescript-eslint/eslint-plugin": "^2.6.0",
     "@typescript-eslint/parser": "^2.6.0",
+    "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.15.1",
@@ -59,6 +61,7 @@
     "react-axe": "^3.0.2",
     "react-docgen-typescript-loader": "^3.2.1",
     "react-dom": "^16.11.0",
+    "react-scripts": "3.3.0",
     "regenerator-runtime": "^0.13.3",
     "rimraf": "^3.0.0",
     "style-loader": "^1.0.0",
@@ -81,10 +84,11 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
-    "@patternfly/react-core": "^3.77.2",
-    "@patternfly/react-icons": "^3.14.18",
-    "@patternfly/react-styles": "^3.5.7",
+    "@patternfly/react-core": "^3.129.3",
+    "@patternfly/react-icons": "^3.14.28",
+    "@patternfly/react-styles": "^3.6.15",
     "react-router-dom": "^5.0.1",
-    "react-router-last-location": "^2.0.1"
+    "react-router-last-location": "^2.0.1",
+    "react-svg-loader": "^3.0.3"
   }
 }
