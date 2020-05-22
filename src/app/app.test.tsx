@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { App } from '@app/index';
 import { mount, shallow } from 'enzyme';
 import { Button } from '@patternfly/react-core';
@@ -18,9 +18,9 @@ describe('App tests', () => {
   it('should hide the sidebar when clicking the nav-toggle button', () => {
     const wrapper = mount(<App />);
     const button = wrapper.find('#nav-toggle').hostNodes();
-    expect(wrapper.find('#page-sidebar').hasClass('pf-m-expanded')).toBeTruthy();
-    button.simulate('click');
     expect(wrapper.find('#page-sidebar').hasClass('pf-m-collapsed')).toBeTruthy();
-    expect(wrapper.find('#page-sidebar').hasClass('pf-m-expanded')).toBeFalsy();
+    button.simulate('click');
+    expect(wrapper.find('#page-sidebar').hasClass('pf-m-expanded')).toBeTruthy();
+    expect(wrapper.find('#page-sidebar').hasClass('pf-m-collapsed')).toBeFalsy();
   });
 });

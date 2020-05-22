@@ -4,39 +4,47 @@ Patternfly Seed is an open source build scaffolding utility for web apps. The pr
 
 Out of the box you'll get an app layout with chrome (header/sidebar), routing, build pipeline, test suite, and some code quality tools. Basically, all the essentials.
 
-<img width="1058" alt="Out of box dashboard view of patternfly seed" src="https://user-images.githubusercontent.com/5942899/62715686-fa954980-b9ce-11e9-9fc2-217b7a4d1d81.png">
+<img width="1058" alt="Out of box dashboard view of patternfly seed" src="https://user-images.githubusercontent.com/5942899/82119580-b4cf9380-974d-11ea-9f13-fa10471c5c73.png">
 
 ## Quick-start
+
 ```bash
-npm install yarn -g # ensure you have yarn on your machine globally
-git clone https://github.com/patternfly/patternfly-react-seed # clone the project
-cd patternfly-react-seed # navigate into the project directory
-yarn # install patternfly-react-seed dependencies
-yarn build # build the project
-yarn start # start the development server
+git clone https://github.com/patternfly/patternfly-react-seed
+cd patternfly-react-seed 
+npm install && npm run start:dev 
 ```
 ## Development Scripts
+```sh
+# Install development/build dependencies
+npm install
 
-Install development/build dependencies
-`yarn`
+# Start the development server
+npm run start:dev
 
-Start the development server
-`yarn start`
+# Run a production build (outputs to "dist" dir)
+npm run build
 
-Run a production build
-`yarn build`
+# Run the test suite
+npm run test
 
-Run the test suite
-`yarn test`
+# Run the linter
+npm run lint
 
-Run the linter
-`yarn lint`
+# Run the code formatter
+npm run format
 
-Run the code formatter
-`yarn format`
+# Launch a tool to inspect the bundle size
+npm run bundle-profile:analyze
 
-Launch a tool to inspect the bundle size
-`yarn bundle-profile:analyze`
+# Start the express server (run a production build first)
+npm run start
+
+# Start storybook component explorer
+npm run storybook
+
+# Build storybook component explorer as standalone app (outputs to "storybook-static" dir)
+npm run build:storybook
+```
 
 ## Configurations
 * [TypeScript Config](./tsconfig.json)
@@ -46,7 +54,7 @@ Launch a tool to inspect the bundle size
 
 ## Raster Image Support
 
-To use an image asset that's shipped with patternfly core, you'll prefix the paths with "@assets". `@assets` is an alias for the patternfly assets directory in node_modules.
+To use an image asset that's shipped with PatternFly core, you'll prefix the paths with "@assets". `@assets` is an alias for the PatternFly assets directory in node_modules.
 
 For example:
 ```js
@@ -82,6 +90,14 @@ body {
 * To keep our code formatting in check, we use [prettier](https://github.com/prettier/prettier)
 * To keep our code logic and test coverage in check, we use [jest](https://github.com/facebook/jest)
 * To ensure code styles remain consistent, we use [eslint](https://eslint.org/)
+* To provide a place to showcase custom components, we integrate with [storybook](https://storybook.js.org/)
 
-### Linter Supper
-Currently, eslint and tslint are both supported. This is temporary. We will be removing support for tslint at some point in the near future, given tslint's roadmap to deprecate itself in favor of a more unified developer experience across TypeScript and JavaScript languages.
+## Multi environment configuration
+This project uses [dotenv-webpack](https://www.npmjs.com/package/dotenv-webpack) for exposing environment variables to your code. Either export them at the system level like `export MY_ENV_VAR=http://dev.myendpoint.com && npm run start:dev` or simply drop a `.env` file in the root that contains your key-value pairs like below:
+
+```sh
+ENV_1=http://1.myendpoint.com
+ENV_2=http://2.myendpoint.com
+```
+
+With that in place, you can use the values in your code like `console.log(process.env.ENV_1);`
