@@ -3,7 +3,7 @@ import { Route, RouteComponentProps, Switch } from 'react-router-dom';
 import { Alert, PageSection } from '@patternfly/react-core';
 import { DynamicImport } from '@app/DynamicImport';
 import { accessibleRouteChangeHandler } from '@app/utils/utils';
-import { Dashboard } from '@app/Dashboard/Dashboard';
+import { Welcome } from '@app/Welcome/Welcome';
 import { Launcher } from '@app/Launcher/Launcher';
 import { NotFound } from '@app/NotFound/NotFound';
 import { useDocumentTitle } from '@app/utils/useDocumentTitle';
@@ -50,13 +50,13 @@ export interface IAppRoute {
 }
 
 const routes: IAppRoute[] = [
-/*   {
-    component: Dashboard,
+  {
+    component: Welcome,
     exact: true,
-    label: 'Dashboard',
+    label: 'Welcome',
     path: '/',
-    title: 'ODH Dashboard',
-  }, */
+    title: 'Welcome to ODH',
+  },
   {
     component: Launcher,
     exact: true,
