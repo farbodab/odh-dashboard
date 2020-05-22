@@ -80,7 +80,7 @@ module.exports = env => {
             (input.indexOf('pficon') === -1)
           ),
           use: {
-            loader: 'raw-loader',
+            loader: '@svgr/webpack',
             options: {}
           }
         },
