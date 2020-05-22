@@ -50,13 +50,13 @@ export interface IAppRoute {
 }
 
 const routes: IAppRoute[] = [
-  {
+/*   {
     component: Dashboard,
     exact: true,
     label: 'Dashboard',
     path: '/',
     title: 'ODH Dashboard',
-  },
+  }, */
   {
     component: Launcher,
     exact: true,
@@ -64,14 +64,14 @@ const routes: IAppRoute[] = [
     path: '/launcher',
     title: 'ODH Applications'
   },
-  {
+/*   {
     component: Support,
     exact: true,
     isAsync: true,
     label: 'Support',
     path: '/support',
     title: 'PatternFly Seed | Support Page',
-  },
+  }, */
 ];
 
 // a custom hook for sending focus to the primary content container
