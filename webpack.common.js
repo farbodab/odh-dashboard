@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const BG_IMAGES_DIRNAME = 'bgimages';
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = env => {
 
@@ -117,6 +118,7 @@ module.exports = env => {
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'src', 'index.html')
       }),
+      new FaviconsWebpackPlugin('./src/assets/img/favicons/favicon.ico'),
       new Dotenv({
         systemvars: true,
         silent: true

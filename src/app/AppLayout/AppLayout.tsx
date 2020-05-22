@@ -10,7 +10,7 @@ import {
   SkipToContent
 } from '@patternfly/react-core';
 import { routes } from '@app/routes';
-import LogoODH from '../../assets/logos/odh.svg';
+import LogoODH from '../../assets/img/logos/odh.svg';
 
 interface IAppLayout {
   children: React.ReactNode;

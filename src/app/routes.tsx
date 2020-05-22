@@ -55,14 +55,14 @@ const routes: IAppRoute[] = [
     exact: true,
     label: 'Dashboard',
     path: '/',
-    title: 'PatternFly Seed | Main Dashboard',
+    title: 'ODH Dashboard',
   },
   {
     component: Launcher,
     exact: true,
-    label: 'Launcher',
+    label: 'Applications',
     path: '/launcher',
-    title: 'Main Launcher Title'
+    title: 'ODH Applications'
   },
   {
     component: Support,
