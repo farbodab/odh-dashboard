@@ -26,5 +26,3 @@ app.use(express.static(path.join(__dirname, '/dist')));
 app.listen(process.env.LISTEN_PORT, function () {
   console.log(`App running on port ${process.env.LISTEN_PORT}`);
 });
-
-app.listen(process.env.LISTEN_PORT, () => console.log(`Listening on port ${process.env.LISTEN_PORT}`));
