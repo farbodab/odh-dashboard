@@ -18,8 +18,11 @@ npm install && npm run start:dev
 # Install development/build dependencies
 npm install
 
-# Start the development server
+# Start the development server (frontend only)
 npm run start:dev
+
+# Start the development server for the frontend + the backend server concurrently (all logs on the same console)
+npm run start:dev-conc
 
 # Run a production build (outputs to "dist" dir)
 npm run build
