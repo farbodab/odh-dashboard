@@ -1,19 +1,19 @@
-# Patternfly Seed
+# Open Data Hub Dashboard
 
-Patternfly Seed is an open source build scaffolding utility for web apps. The primary purpose of this project is to give developers a jump start when creating new projects that will use patternfly. A secondary purpose of this project is to serve as a reference for how to configure various aspects of an application that uses patternfly, webpack, react, typescript, etc.
+This project is a dashboard/frontend for various functions related to [Open Data Hub]([http://](https://opendatahub.io/)).
 
-Out of the box you'll get an app layout with chrome (header/sidebar), routing, build pipeline, test suite, and some code quality tools. Basically, all the essentials.
-
-<img width="1058" alt="Out of box dashboard view of patternfly seed" src="https://user-images.githubusercontent.com/5942899/82119580-b4cf9380-974d-11ea-9f13-fa10471c5c73.png">
+It is a React app based on [PatternFly seed](https://github.com/patternfly/patternfly-react-seed).
 
 ## Quick-start
 
 ```bash
-git clone https://github.com/patternfly/patternfly-react-seed
-cd patternfly-react-seed 
-npm install && npm run start:dev 
+git clone https://github.com/guimou/odh-dashboard.git
+cd odh-dashboard
+npm install && npm run start:dev
 ```
+
 ## Development Scripts
+
 ```sh
 # Install development/build dependencies
 npm install
@@ -47,6 +47,7 @@ npm run build:storybook
 ```
 
 ## Configurations
+
 * [TypeScript Config](./tsconfig.json)
 * [Webpack Config](./webpack.common.js)
 * [Jest Config](./jest.config.js)
@@ -57,6 +58,7 @@ npm run build:storybook
 To use an image asset that's shipped with PatternFly core, you'll prefix the paths with "@assets". `@assets` is an alias for the PatternFly assets directory in node_modules.
 
 For example:
+
 ```js
 import imgSrc from '@assets/images/g_sizing.png';
 <img src={imgSrc} alt="Some image" />
@@ -70,6 +72,7 @@ import loader from '@app/assets/images/loader.gif';
 ```
 
 ## Vector Image Support
+
 Inlining SVG in the app's markup is also possible.
 
 ```js
@@ -78,6 +81,7 @@ import logo from '@app/assets/images/logo.svg';
 ```
 
 You can also use SVG when applying background images with CSS. To do this, your SVG's must live under a `bgimages` directory (this directory name is configurable in [webpack.common.js](./webpack.common.js#L5)). This is necessary because you may need to use SVG's in several other context (inline images, fonts, icons, etc.) and so we need to be able to differentiate between these usages so the appropriate loader is invoked.
+
 ```css
 body {
   background: url(./assets/bgimages/img_avatar.svg);
@@ -85,6 +89,7 @@ body {
 ```
 
 ## Code Quality Tools
+
 * For accessibility compliance, we use [react-axe](https://github.com/dequelabs/react-axe)
 * To keep our bundle size in check, we use [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
 * To keep our code formatting in check, we use [prettier](https://github.com/prettier/prettier)
@@ -93,6 +98,7 @@ body {
 * To provide a place to showcase custom components, we integrate with [storybook](https://storybook.js.org/)
 
 ## Multi environment configuration
+
 This project uses [dotenv-webpack](https://www.npmjs.com/package/dotenv-webpack) for exposing environment variables to your code. Either export them at the system level like `export MY_ENV_VAR=http://dev.myendpoint.com && npm run start:dev` or simply drop a `.env` file in the root that contains your key-value pairs like below:
 
 ```sh

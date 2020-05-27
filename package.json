@@ -1,9 +1,9 @@
 {
-  "name": "patternfly-seed",
-  "version": "0.0.1",
-  "description": "An open source build scaffolding utility for web apps.",
+  "name": "odh-dashboard",
+  "version": "0.1.0",
+  "description": "Open Data Hub Dashboard",
   "main": "server.js",
-  "repository": "https://github.com/patternfly/patternfly-react-seed.git",
+  "repository": "https://github.com/guimou/odh-dashboard.git",
   "license": "MIT",
   "private": true,
   "scripts": {

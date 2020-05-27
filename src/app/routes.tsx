@@ -11,33 +11,6 @@ import { LastLocationProvider, useLastLocation } from 'react-router-last-locatio
 
 let routeFocusTimer: number;
 
-const getSupportModuleAsync = () => () => import(/* webpackChunkName: 'support' */ '@app/Support/Support');
-
-const Support = (routeProps: RouteComponentProps) => {
-  const lastNavigation = useLastLocation();
-  return (
-    /* eslint-disable @typescript-eslint/no-explicit-any */
-    <DynamicImport load={getSupportModuleAsync()} focusContentAfterMount={lastNavigation !== null}>
-      {(Component: any) => {
-        let loadedComponent: any;
-        /* eslint-enable @typescript-eslint/no-explicit-any */
-        if (Component === null) {
-          loadedComponent = (
-            <PageSection aria-label="Loading Content Container">
-              <div className="pf-l-bullseye">
-                <Alert title="Loading" className="pf-l-bullseye__item" />
-              </div>
-            </PageSection>
-          );
-        } else {
-          loadedComponent = <Component.Support {...routeProps} />;
-        }
-        return loadedComponent;
-      }}
-    </DynamicImport>
-  );
-};
-
 export interface IAppRoute {
   label?: string;
   /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -64,14 +37,6 @@ const routes: IAppRoute[] = [
     path: '/launcher',
     title: 'ODH Applications'
   },
-/*   {
-    component: Support,
-    exact: true,
-    isAsync: true,
-    label: 'Support',
-    path: '/support',
-    title: 'PatternFly Seed | Support Page',
-  }, */
 ];
 
 // a custom hook for sending focus to the primary content container
