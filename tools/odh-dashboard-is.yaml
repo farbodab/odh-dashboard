@@ -1,0 +1,16 @@
+kind: ImageStream
+apiVersion: image.openshift.io/v1
+metadata:
+  name: odh-dashboard
+  namespace: odh
+  labels:
+    app: odh-dashboard
+    app.kubernetes.io/component: odh-dashboard
+    app.kubernetes.io/instance: odh-dashboard
+    app.kubernetes.io/name: modern-webapp
+    app.kubernetes.io/part-of: odh-dashboard
+    app.openshift.io/runtime: modern-webapp
+    app.openshift.io/runtime-version: 10.x
+spec:
+  lookupPolicy:
+    local: false

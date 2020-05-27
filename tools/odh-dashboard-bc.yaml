@@ -1,0 +1,50 @@
+kind: BuildConfig
+apiVersion: build.openshift.io/v1
+metadata:
+  name: odh-dashboard
+  namespace: odh
+  labels:
+    app: odh-dashboard
+    app.kubernetes.io/component: odh-dashboard
+    app.kubernetes.io/instance: odh-dashboard
+    app.kubernetes.io/name: modern-webapp
+    app.kubernetes.io/part-of: odh-dashboard
+    app.openshift.io/runtime: modern-webapp
+    app.openshift.io/runtime-version: 10.x
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'odh-dashboard:latest'
+  resources: {}
+  successfulBuildsHistoryLimit: 5
+  failedBuildsHistoryLimit: 5
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: openshift
+        name: 'nodejs:10'
+      env:
+        - name: OUTPUT_DIR
+          value: dist
+  postCommit: {}
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/guimou/odh-dashboard'
+    contextDir: /
+  triggers:
+    - type: Generic
+      generic:
+        secretReference:
+          name: odh-dashboard-generic-webhook-secret
+    - type: GitHub
+      github:
+        secretReference:
+          name: odh-dashboard-github-webhook-secret
+    - type: ImageChange
+    - type: ConfigChange
+  runPolicy: Serial
