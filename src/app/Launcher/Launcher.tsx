@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import axios from 'axios';
 import { Text, Button, Page, PageSection, Title } from '@patternfly/react-core';
 import { Card, CardHeader, CardBody, CardFooter, CardActions } from '@patternfly/react-core';
 import { Grid, GridItem } from '@patternfly/react-core';
 import { Brand } from '@patternfly/react-core';
 import { List, ListItem } from '@patternfly/react-core';
+import axios from 'axios';
+
 import argoLogo from '../../assets/img/logos/argo.png';
 import jupyterhubLogo from '../../assets/img/logos/jupyter.png';
 import supersetLogo from '../../assets/img/logos/superset.png';
